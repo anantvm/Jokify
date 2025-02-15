@@ -2,4 +2,106 @@ body{
     /* background-color: black; */
     height: 100vh;
     background-image: url("pattern_lines.png");
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 50px;
+
+    /* z-index: -1; */
 }
+
+.Joke-Gen-Box{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+
+h1 p{
+
+    font-size: 60px;
+    color: orange;
+    text-align: center;
+    font-family: "Caveat", serif;
+    text-decoration: underline;
+    /* z-index: 10; */
+}
+
+section.main-heading{
+    background-color: #FFB22C;
+}
+
+span.heading{
+    font-weight: bold;
+}
+
+a.nav-link:hover{
+    background-color: rgb(13, 110, 253);
+    color: white;
+}
+
+.modal-body{
+    width: 50%;
+    background-color: #FFB200;
+    border-radius: 5%;
+}
+
+.modal-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-img{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+
+/* .container {
+    position: relative;
+    text-align: center;
+    color: white;
+  } */
+
+.joke_setup{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.joke_setup p{
+    font-size: 30px;
+    color: white;
+}
+
+.joke_delivery p{
+    font-size: 30px;
+    color: white;
+}
+
+/* Centered text */
+.joke_delivery {
+    position: absolute;
+    bottom: 1%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.container{
+    background-color: #FFB200;
+    /* margin-left: 0px;
+    margin-right: 0px; */
+}
+
+.footer-class{
+    background-color: #FFB22C;
+    /* margin-bottom: 0px; */
+    /* margin-top: auto; */
+}
+
+
+

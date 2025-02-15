@@ -4,9 +4,218 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/style.css">
-    <title>Document</title>
+    <title>Jokify</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Grechen+Fuemen&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Playwrite+HU&family=Poppins:wght@900&display=swap" rel="stylesheet">
 </head>
 <body>
+
+    <section class="main-heading">
+        <div class="container">
+            <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+                <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-emoji-sunglasses" viewBox="0 0 16 16">
+                        <path d="M4.968 9.75a.5.5 0 1 0-.866.5A4.5 4.5 0 0 0 8 12.5a4.5 4.5 0 0 0 3.898-2.25.5.5 0 1 0-.866-.5A3.5 3.5 0 0 1 8 11.5a3.5 3.5 0 0 1-3.032-1.75M7 5.116V5a1 1 0 0 0-1-1H3.28a1 1 0 0 0-.97 1.243l.311 1.242A2 2 0 0 0 4.561 8H5a2 2 0 0 0 1.994-1.839A3 3 0 0 1 8 6c.393 0 .74.064 1.006.161A2 2 0 0 0 11 8h.438a2 2 0 0 0 1.94-1.515l.311-1.242A1 1 0 0 0 12.72 4H10a1 1 0 0 0-1 1v.116A4.2 4.2 0 0 0 8 5c-.35 0-.69.04-1 .116"/>
+                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-1 0A7 7 0 1 0 1 8a7 7 0 0 0 14 0"/>
+                    </svg>               
+                    <span class="fs-4 heading">Jokify</span>
+                </a>
+                
+                <ul class="nav nav-pills">
+                    <li class="nav-item"><a href="/" class="nav-link" aria-current="page">Home</a></li>
+                    <li class="nav-item"><a href="/generate_page" class="nav-link">Generate Joke</a></li>
+                    <li class="nav-item"><a href="/credits" class="nav-link">Credits</a></li>
+                    <li class="nav-item"><a href="/about_us" class="nav-link">About Us</a></li>
+                </ul>
+            </header>
+        </div>
+    </section>
+    
+    <% if(data == "1"){ %>
+
+    
+    <h1><p>Welcome To Jokify</p></h1>
+
+    <section>
+        <div class="modal-content rounded-4 shadow">
+      <div class="modal-body p-5">
+        <h2 class="fw-bold mb-0">How it works?</h2>
+
+        <ul class="d-grid gap-4 my-5 list-unstyled small">
+          <li class="d-flex gap-4">
+            <svg class="bi text-body-secondary flex-shrink-0" width="48" height="48"><use xlink:href="#grid-fill"></use></svg>
+            <div>
+              <h5 class="mb-0">Select your Type</h5>
+              Adjust the category to get the kind of jokes you're interested in.
+            </div>
+          </li>
+          <li class="d-flex gap-4">
+            <svg class="bi text-warning flex-shrink-0" width="48" height="48"><use xlink:href="#bookmark-star"></use></svg>
+            <div>
+              <h5 class="mb-0">Generate Joke</h5>
+              Click on the generate meme button.
+            </div>
+          </li>
+          <li class="d-flex gap-4">
+            <svg class="bi text-primary flex-shrink-0" width="48" height="48"><use xlink:href="#film"></use></svg>
+            <div>
+              <h5 class="mb-0">Enjoy : )</h5>
+              Make sure to share it with your friends.
+            </div>
+          </li>
+        </ul>
+        <form action="generate_page" method="post">
+            <button type="submit" class="btn btn-lg btn-primary mt-2 w-100" name="generate" value="jokes">
+                Gee, Thanks!
+            </button>
+        </form>
+        
+      </div>
+    </div>
+    </section>
+
+
+
+
+
+    <% } else if(data == "2"){ %>
+
+
+
+
+        <div class="modal-content">
+
+            <div class="modal-body p-5">
+                <h2 class="fw-bold mb-4">Choose the type of joke</h2>
+                
+                <form class="row g-3 needs-validation" novalidate method="post" action="/generate_joke">
+                    <div class="col-md-3">
+                        <select name="type" class="form-select" id="validationCustom04" required>
+                            <!-- <option selected disabled value="">Choose...</option> -->
+                            <option value="Family-friendly">Family-friendly</option>
+                            <option value="Pun">Pun</option>
+                            <option value="Dark">Dark</option>
+                            <option value="All">All of the above</option>
+                        </select>
+                        <!-- <div class="invalid-feedback">
+                            Please select a valid state.
+                        </div> -->
+                    </div>
+                    <button type="submit" class="btn btn-lg btn-primary mt-5 w-100" data-bs-dismiss="modal">Generate Meme</button>
+                </form>
+                
+            </div>
+        </div>
+            
+
+
+
+        <% } else if(data == "3"){ %>
+            
+
+            <div class="container-img">
+                <img src="https://picsum.photos/750/750" alt="Snow">
+                <div class="joke_setup"><p><%= setup %></p></div>
+                <div class="joke_delivery"><p><%= delivery %></p></div>
+            </div>
+
+            <div class="modal-content">
+
+                <div class="modal-body p-5">
+                    <h2 class="fw-bold mb-4">Choose the type of joke</h2>
+                    
+                    <form class="row g-3 needs-validation" novalidate method="post" action="/generate_joke">
+                        <div class="col-md-3">
+                            <select name="type" class="form-select" id="validationCustom04" required>
+                                <!-- <option selected disabled value="">Choose...</option> -->
+                                <option value="Family-friendly">Family-friendly</option>
+                                <option value="Pun">Pun</option>
+                                <option value="Dark">Dark</option>
+                                <option value="All">All of the above</option>
+                            </select>
+                            <!-- <div class="invalid-feedback">
+                                Please select a valid state.
+                            </div> -->
+                        </div>
+                        <button type="submit" class="btn btn-lg btn-primary mt-5 w-100" data-bs-dismiss="modal">Generate Meme</button>
+                    </form>
+                    
+                </div>
+            </div>
+
+
+
+
+            <% } else if(data == "4"){ %>
+
+
+                <div class="px-4 py-5 my-5 text-center" style="background-color: orange;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-emoji-sunglasses" viewBox="0 0 16 16">
+                        <path d="M4.968 9.75a.5.5 0 1 0-.866.5A4.5 4.5 0 0 0 8 12.5a4.5 4.5 0 0 0 3.898-2.25.5.5 0 1 0-.866-.5A3.5 3.5 0 0 1 8 11.5a3.5 3.5 0 0 1-3.032-1.75M7 5.116V5a1 1 0 0 0-1-1H3.28a1 1 0 0 0-.97 1.243l.311 1.242A2 2 0 0 0 4.561 8H5a2 2 0 0 0 1.994-1.839A3 3 0 0 1 8 6c.393 0 .74.064 1.006.161A2 2 0 0 0 11 8h.438a2 2 0 0 0 1.94-1.515l.311-1.242A1 1 0 0 0 12.72 4H10a1 1 0 0 0-1 1v.116A4.2 4.2 0 0 0 8 5c-.35 0-.69.04-1 .116"/>
+                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-1 0A7 7 0 1 0 1 8a7 7 0 0 0 14 0"/>
+                    </svg>
+                    <h1 class="display-5 fw-bold text-body-emphasis">Credits</h1>
+                    <div class="col-lg-6 mx-auto">
+                      <p class="lead mb-4">This joke generator website was inspired by and built with the help of the <a href="https://sv443.net/jokeapi/v2/#type-param">Joke API</a>. Their amazing collection of jokes made it possible to bring laughter with just a click! A huge shoutout to them for providing a fantastic API that keeps the humor flowing.
+
+                        Special thanks to all the comedians, writers, and joke enthusiasts who contribute to making the internet a funnier place! 😆🎉</p>
+                      <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                        <form action="/generate_page" method="post">
+                            <button type="submit" class="btn btn-primary btn-lg px-4 gap-3"><a href="" style="color: white; text-decoration: none;">Generate Joke</a></button>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+
+
+
+                <% } else if(data == "5"){%>
+
+
+
+                    <div class="px-4 py-5 my-5 text-center" style="background-color: orange;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-emoji-sunglasses" viewBox="0 0 16 16">
+                            <path d="M4.968 9.75a.5.5 0 1 0-.866.5A4.5 4.5 0 0 0 8 12.5a4.5 4.5 0 0 0 3.898-2.25.5.5 0 1 0-.866-.5A3.5 3.5 0 0 1 8 11.5a3.5 3.5 0 0 1-3.032-1.75M7 5.116V5a1 1 0 0 0-1-1H3.28a1 1 0 0 0-.97 1.243l.311 1.242A2 2 0 0 0 4.561 8H5a2 2 0 0 0 1.994-1.839A3 3 0 0 1 8 6c.393 0 .74.064 1.006.161A2 2 0 0 0 11 8h.438a2 2 0 0 0 1.94-1.515l.311-1.242A1 1 0 0 0 12.72 4H10a1 1 0 0 0-1 1v.116A4.2 4.2 0 0 0 8 5c-.35 0-.69.04-1 .116"/>
+                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-1 0A7 7 0 1 0 1 8a7 7 0 0 0 14 0"/>
+                        </svg>
+                        <h1 class="display-5 fw-bold text-body-emphasis">About us</h1>
+                        <div class="col-lg-6 mx-auto">
+                          <p class="lead mb-4">THey there! 👋 I’m just a student from VIT Chennai pursuing B.Tech in computer science, and this joke generator is a fun little project I built for laughs (and maybe to procrastinate on assignments 😅).
+
+                            Creating this website was an exciting experience, and I had a blast experimenting with code and APIs to bring some humor to your screen. Hope it gives you a good chuckle! 😆
+                            
+                            Enjoy the jokes, and thanks for stopping by! 🎉</p>
+                          <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                            <form action="/generate_page" method="post">
+                                <button type="submit" class="btn btn-primary btn-lg px-4 gap-3"><a href="" style="color: white; text-decoration: none;">Generate Joke</a></button>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+
+
+                    <% } %>
+
+
+    <section class="footer-class">
+        <div class="container">
+            <footer class="py-3 my-4">
+              <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Home</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Features</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Pricing</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">FAQs</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">About</a></li>
+              </ul>
+              <p class="text-center text-body-secondary">© 2025 Jokify, Inc</p>
+            </footer>
+          </div>
+
+    </section>
+
+
 
 </body>
 </html>
