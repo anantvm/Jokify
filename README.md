@@ -1,4 +1,4 @@
-# 😂 Jokify  
+# Jokify  
 
 This project is a **fun and interactive web app** that generates customizable **jokes and memes** on demand.
 Users can customize their preferences, and the app fetches jokes from an external **Joke API** to deliver laughs instantly.  
